@@ -223,6 +223,11 @@ struct GameContainerView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             showGo = false
             gameViewModel.startGame()
+            // Analytics: ゲーム開始を記録
+            AnalyticsService.logGameStart(
+                ruleType: selectedMode.ruleType.rawValue,
+                modeType: selectedMode.modeType.rawValue
+            )
         }
     }
 
@@ -254,6 +259,22 @@ struct GameContainerView: View {
         isNewHighScore = userViewModel.updateBestScore(for: selectedMode, score: lastScore)
         userViewModel.addArrowsCleared(lastScore)
         userViewModel.incrementGamesPlayed()
+
+        // Analytics: ゲーム終了を記録
+        AnalyticsService.logGameEnd(
+            ruleType: selectedMode.ruleType.rawValue,
+            modeType: selectedMode.modeType.rawValue,
+            score: lastScore
+        )
+
+        // Analytics: ハイスコア更新を記録
+        if isNewHighScore {
+            AnalyticsService.logNewHighScore(
+                ruleType: selectedMode.ruleType.rawValue,
+                modeType: selectedMode.modeType.rawValue,
+                score: lastScore
+            )
+        }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             currentScreen = .result

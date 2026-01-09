@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5F5CAAA42F10F58500D9B022 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5F5CAAA32F10F58500D9B022 /* FirebaseAnalytics */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5F5CAA572F0FD49C00D9B022 /* swipe-arrows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swipe-arrows.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5CAAA42F10F58500D9B022 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "swipe-arrows";
 			packageProductDependencies = (
+				5F5CAAA32F10F58500D9B022 /* FirebaseAnalytics */,
 			);
 			productName = "swipe-arrows";
 			productReference = 5F5CAA572F0FD49C00D9B022 /* swipe-arrows.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 5F5CAA4E2F0FD49C00D9B022;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5F5CAAA22F10F58500D9B022 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5F5CAA582F0FD49C00D9B022 /* Products */;
 			projectDirPath = "";
@@ -334,6 +343,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F5CAAA22F10F58500D9B022 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F5CAAA32F10F58500D9B022 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F5CAAA22F10F58500D9B022 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F5CAA4F2F0FD49C00D9B022 /* Project object */;
 }
