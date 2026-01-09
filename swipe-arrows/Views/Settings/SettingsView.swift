@@ -87,7 +87,7 @@ struct SettingsView: View {
 
                     // プライバシーポリシー
                     Button(action: {
-                        if let url = URL(string: "https://github.com/rate/swipe-arrows/blob/main/PRIVACY_POLICY.md") {
+                        if let url = URL(string: "https://github.com/rate0621/swipe-arrows/blob/main/PRIVACY_POLICY.md") {
                             UIApplication.shared.open(url)
                         }
                     }) {
